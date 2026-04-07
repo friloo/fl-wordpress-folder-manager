@@ -79,6 +79,8 @@ class ElegantFolderManager {
         // Datenbank-Tabellen werden erst bei der Initialisierung erstellt
         // um sicherzustellen, dass WordPress vollständig geladen ist
         // Die eigentliche Tabellenerstellung erfolgt in init() oder bei erster Verwendung
+        // Tabellen erstellen, um Fehler bei der ersten Verwendung zu vermeiden
+        $this->maybe_create_tables();
     }
     
     public function deactivate() {
@@ -104,7 +106,7 @@ class ElegantFolderManager {
         add_action('init', array($this, 'handle_download'));
     }
     
-    private function maybe_create_tables() {
+    public function maybe_create_tables() {
         require_once EFM_PLUGIN_DIR . 'includes/class-database.php';
         EFM\Database::create_tables();
     }
@@ -460,67 +462,3 @@ function efm_init() {
     return ElegantFolderManager::get_instance();
 }
 add_action('plugins_loaded', 'efm_init');
-        // HTML für Dateien generieren
-        $html = '';
-        foreach ($files as $file) {
-            $html .= $this->render_file_item($file);
-        }
-        
-        wp_send_json_success(array(
-            'html' => $html,
-            'has_more' => count($files) >= 20
-        ));
-    }
-    
-    private function render_file_item($file) {
-        $file_uploader = new EFM\FileUploader();
-        $download_url = $file_uploader->get_file_download_url($file['id']);
-        $preview_url = $file_uploader->get_file_preview_url($file['id']);
-        $icon_class = $file_uploader->get_file_icon($file['file_type']);
-        
-        return '
-            <div class="efm-file-item" data-file-id="' . esc_attr($file['id']) . '">
-                <div class="efm-file-icon">
-                    <i class="' . esc_attr($icon_class) . '"></i>
-                    <div class="efm-file-name" title="' . esc_attr($file['file_name']) . '">
-                        ' . esc_html($file['file_name']) . '
-                    </div>
-                </div>
-                
-                <div class="efm-file-size">
-                    ' . EFM\FolderManager::get_instance()->format_file_size($file['file_size']) . '
-                </div>
-                
-                <div class="efm-file-date">
-                    ' . date_i18n(get_option('date_format'), strtotime($file['uploaded_at'])) . '
-                </div>
-                
-                <div class="efm-file-actions">
-                    <button class="efm-file-preview-button" 
-                            data-file-id="' . esc_attr($file['id']) . '"
-                            data-preview-url="' . esc_url($preview_url) . '"
-                            title="' . esc_attr__('Preview file', 'fl-folder-manager') . '">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                    
-                    <a href="' . esc_url($download_url) . '" 
-                       class="efm-file-download-button"
-                       title="' . esc_attr__('Download file', 'fl-folder-manager') . '"
-                       target="_blank">
-                        <i class="fas fa-download"></i>
-                    </a>
-                </div>
-            </div>
-        ';
-    }
-    
-    public function folder_structure_shortcode($atts) {
-        $shortcode_handler = new EFM\ShortcodeHandler();
-        return $shortcode_handler->render_folder_structure($atts);
-    }
-}
-
-// Plugin initialisieren - sicherstellen, dass WordPress geladen ist
-add_action('plugins_loaded', function() {
-    ElegantFolderManager::get_instance();
-});
