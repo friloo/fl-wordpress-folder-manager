@@ -76,13 +76,9 @@ class ElegantFolderManager {
     }
     
     public function activate() {
-        require_once EFM_PLUGIN_DIR . 'includes/class-database.php';
-        EFM\Database::create_tables();
-        
-        // Standard-Rollen falls benötigt
-        $this->setup_default_roles();
-        
-        flush_rewrite_rules();
+        // Datenbank-Tabellen werden erst bei der Initialisierung erstellt
+        // um sicherzustellen, dass WordPress vollständig geladen ist
+        // Die eigentliche Tabellenerstellung erfolgt in init() oder bei erster Verwendung
     }
     
     public function deactivate() {
@@ -98,6 +94,9 @@ class ElegantFolderManager {
         // Internationalisierung
         load_plugin_textdomain('fl-folder-manager', false, dirname(EFM_PLUGIN_BASENAME) . '/languages');
         
+        // Datenbank-Tabellen erstellen (falls nicht vorhanden)
+        $this->maybe_create_tables();
+        
         // AJAX Handler
         $this->setup_ajax_handlers();
         
@@ -105,10 +104,18 @@ class ElegantFolderManager {
         add_action('init', array($this, 'handle_download'));
     }
     
+    private function maybe_create_tables() {
+        require_once EFM_PLUGIN_DIR . 'includes/class-database.php';
+        EFM\Database::create_tables();
+    }
+    
     public function handle_download() {
         if (isset($_GET['efm_download'])) {
-            $file_uploader = new EFM\FileUploader();
-            $file_uploader->handle_download();
+            // Sicherstellen, dass die Klasse geladen ist
+            if (class_exists('EFM\\FileUploader')) {
+                $file_uploader = new EFM\FileUploader();
+                $file_uploader->handle_download();
+            }
         }
     }
     
