@@ -1,0 +1,640 @@
+/* Elegant Folder Manager - Admin Styles */
+
+:root {
+    --efm-admin-primary: #2271b1;
+    --efm-admin-primary-dark: #135e96;
+    --efm-admin-secondary: #00a0d2;
+    --efm-admin-success: #46b450;
+    --efm-admin-warning: #ffb900;
+    --efm-admin-error: #dc3232;
+    --efm-admin-gray-50: #f6f7f7;
+    --efm-admin-gray-100: #f0f0f1;
+    --efm-admin-gray-200: #dcdcde;
+    --efm-admin-gray-300: #c3c4c7;
+    --efm-admin-gray-400: #a7aaad;
+    --efm-admin-gray-500: #8c8f94;
+    --efm-admin-gray-600: #787c82;
+    --efm-admin-gray-700: #646970;
+    --efm-admin-gray-800: #50575e;
+    --efm-admin-gray-900: #2c3338;
+    --efm-admin-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --efm-admin-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --efm-admin-radius: 3px;
+    --efm-admin-radius-lg: 6px;
+    --efm-admin-transition: all 0.2s ease;
+}
+
+/* Admin Container */
+#efm-admin-app,
+#efm-permissions-app {
+    background: white;
+    border: 1px solid var(--efm-admin-gray-200);
+    border-radius: var(--efm-admin-radius-lg);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: var(--efm-admin-shadow);
+}
+
+/* Tabs Navigation */
+.efm-admin-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--efm-admin-gray-200);
+    margin-bottom: 20px;
+}
+
+.efm-admin-tab {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--efm-admin-gray-600);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--efm-admin-transition);
+    margin-bottom: -2px;
+}
+
+.efm-admin-tab:hover {
+    color: var(--efm-admin-primary);
+    border-bottom-color: var(--efm-admin-gray-300);
+}
+
+.efm-admin-tab.active {
+    color: var(--efm-admin-primary);
+    border-bottom-color: var(--efm-admin-primary);
+}
+
+/* Folder Tree */
+.efm-folder-tree {
+    border: 1px solid var(--efm-admin-gray-200);
+    border-radius: var(--efm-admin-radius);
+    padding: 15px;
+    background: var(--efm-admin-gray-50);
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.efm-folder-tree-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid var(--efm-admin-gray-200);
+    border-radius: var(--efm-admin-radius);
+    background: white;
+    margin-bottom: 8px;
+    transition: var(--efm-admin-transition);
+}
+
+.efm-folder-tree-item:hover {
+    border-color: var(--efm-admin-primary);
+    box-shadow: var(--efm-admin-shadow);
+}
+
+.efm-folder-tree-item.dragging {
+    opacity: 0.5;
+    background: var(--efm-admin-gray-100);
+}
+
+.efm-folder-icon {
+    color: var(--efm-admin-primary);
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.efm-folder-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--efm-admin-gray-800);
+}
+
+.efm-folder-actions {
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: var(--efm-admin-transition);
+}
+
+.efm-folder-tree-item:hover .efm-folder-actions {
+    opacity: 1;
+}
+
+.efm-folder-action-btn {
+    background: none;
+    border: 1px solid var(--efm-admin-gray-300);
+    color: var(--efm-admin-gray-600);
+    width: 30px;
+    height: 30px;
+    border-radius: var(--efm-admin-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--efm-admin-transition);
+}
+
+.efm-folder-action-btn:hover {
+    background: var(--efm-admin-gray-100);
+    border-color: var(--efm-admin-gray-400);
+    color: var(--efm-admin-gray-800);
+}
+
+.efm-folder-action-btn.edit:hover {
+    background: var(--efm-admin-secondary);
+    border-color: var(--efm-admin-secondary);
+    color: white;
+}
+
+.efm-folder-action-btn.delete:hover {
+    background: var(--efm-admin-error);
+    border-color: var(--efm-admin-error);
+    color: white;
+}
+
+/* Permissions Matrix */
+.efm-permissions-matrix {
+    overflow-x: auto;
+}
+
+.efm-permissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.efm-permissions-table th,
+.efm-permissions-table td {
+    padding: 12px;
+    border: 1px solid var(--efm-admin-gray-200);
+    text-align: left;
+}
+
+.efm-permissions-table th {
+    background: var(--efm-admin-gray-50);
+    font-weight: 600;
+    color: var(--efm-admin-gray-800);
+    position: sticky;
+    top: 0;
+}
+
+.efm-permissions-table tr:hover {
+    background: var(--efm-admin-gray-50);
+}
+
+.efm-permission-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.efm-permission-checkbox:checked {
+    background-color: var(--efm-admin-primary);
+    border-color: var(--efm-admin-primary);
+}
+
+/* Forms */
+.efm-admin-form {
+    background: var(--efm-admin-gray-50);
+    border: 1px solid var(--efm-admin-gray-200);
+    border-radius: var(--efm-admin-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.efm-form-group {
+    margin-bottom: 15px;
+}
+
+.efm-form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--efm-admin-gray-800);
+}
+
+.efm-form-input,
+.efm-form-textarea,
+.efm-form-select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--efm-admin-gray-300);
+    border-radius: var(--efm-admin-radius);
+    background: white;
+    transition: var(--efm-admin-transition);
+}
+
+.efm-form-input:focus,
+.efm-form-textarea:focus,
+.efm-form-select:focus {
+    outline: none;
+    border-color: var(--efm-admin-primary);
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.1);
+}
+
+.efm-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Buttons */
+.efm-admin-button {
+    background: var(--efm-admin-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--efm-admin-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--efm-admin-transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.efm-admin-button:hover {
+    background: var(--efm-admin-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--efm-admin-shadow);
+}
+
+.efm-admin-button.secondary {
+    background: var(--efm-admin-gray-300);
+    color: var(--efm-admin-gray-800);
+}
+
+.efm-admin-button.secondary:hover {
+    background: var(--efm-admin-gray-400);
+}
+
+.efm-admin-button.success {
+    background: var(--efm-admin-success);
+}
+
+.efm-admin-button.success:hover {
+    background: #3fa349;
+}
+
+.efm-admin-button.danger {
+    background: var(--efm-admin-error);
+}
+
+.efm-admin-button.danger:hover {
+    background: #c72222;
+}
+
+.efm-admin-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Alerts */
+.efm-admin-alert {
+    padding: 12px 16px;
+    border-radius: var(--efm-admin-radius);
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.efm-admin-alert.success {
+    background: #f0f9f0;
+    border-left-color: var(--efm-admin-success);
+    color: #2e5c2e;
+}
+
+.efm-admin-alert.error {
+    background: #fcf0f1;
+    border-left-color: var(--efm-admin-error);
+    color: #8a2424;
+}
+
+.efm-admin-alert.warning {
+    background: #fef8ee;
+    border-left-color: var(--efm-admin-warning);
+    color: #8a5a00;
+}
+
+.efm-admin-alert.info {
+    background: #f0f6fc;
+    border-left-color: var(--efm-admin-secondary);
+    color: #2c5a84;
+}
+
+/* Loading States */
+.efm-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: var(--efm-admin-gray-500);
+}
+
+.efm-loading i {
+    margin-right: 10px;
+    animation: efm-spin 1s linear infinite;
+}
+
+@keyframes efm-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Empty States */
+.efm-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--efm-admin-gray-500);
+}
+
+.efm-empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: var(--efm-admin-gray-300);
+}
+
+.efm-empty-state h3 {
+    margin: 0 0 10px 0;
+    color: var(--efm-admin-gray-700);
+}
+
+.efm-empty-state p {
+    margin: 0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .efm-admin-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .efm-admin-tab {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .efm-permissions-table {
+        font-size: 14px;
+    }
+    
+    .efm-permissions-table th,
+    .efm-permissions-table td {
+        padding: 8px;
+    }
+}
+
+/* WordPress Integration */
+.wrap h1 {
+    color: var(--efm-admin-gray-900);
+    margin-bottom: 20px;
+}
+
+.wrap h2 {
+    color: var(--efm-admin-gray-800);
+    margin: 30px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--efm-admin-gray-200);
+}
+
+/* Drag & Drop Hints */
+.efm-drag-hint {
+    border: 2px dashed var(--efm-admin-gray-300);
+    border-radius: var(--efm-admin-radius);
+    padding: 30px;
+    text-align: center;
+    color: var(--efm-admin-gray-500);
+    margin-bottom: 20px;
+    background: var(--efm-admin-gray-50);
+}
+
+.efm-drag-hint i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.efm-drag-hint.drag-over {
+    border-color: var(--efm-admin-primary);
+    background: rgba(34, 113, 177, 0.05);
+    color: var(--efm-admin-primary);
+}
+
+/* Admin Header */
+.efm-admin-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--efm-admin-gray-200);
+}
+
+.efm-admin-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: var(--efm-admin-gray-900);
+    font-size: 1.5rem;
+}
+
+.efm-admin-header p {
+    margin: 0;
+    color: var(--efm-admin-gray-600);
+    max-width: 800px;
+}
+
+/* Admin Actions */
+.efm-admin-actions {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Admin Section */
+.efm-admin-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--efm-admin-gray-200);
+    border-radius: var(--efm-admin-radius-lg);
+}
+
+.efm-admin-section h3 {
+    margin: 0 0 1rem 0;
+    color: var(--efm-admin-gray-800);
+    font-size: 1.25rem;
+}
+
+/* Form Actions */
+.efm-form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--efm-admin-gray-200);
+}
+
+/* Checkbox Group */
+.efm-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.efm-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--efm-admin-gray-700);
+}
+
+.efm-checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Shortcode Preview */
+.efm-shortcode-preview {
+    background: var(--efm-admin-gray-100);
+    border: 1px solid var(--efm-admin-gray-300);
+    border-radius: var(--efm-admin-radius);
+    padding: 0.75rem 1rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: var(--efm-admin-gray-800);
+    margin-top: 0.5rem;
+}
+
+.efm-shortcode-preview code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Description Text */
+.description {
+    font-size: 0.875rem;
+    color: var(--efm-admin-gray-600);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+/* WordPress Table Styles */
+.widefat {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.widefat th,
+.widefat td {
+    padding: 12px;
+    border: 1px solid var(--efm-admin-gray-200);
+    text-align: left;
+}
+
+.widefat th {
+    background: var(--efm-admin-gray-50);
+    font-weight: 600;
+    color: var(--efm-admin-gray-800);
+    width: 200px;
+}
+
+.widefat tr:nth-child(even) {
+    background: var(--efm-admin-gray-50);
+}
+
+/* Loading Overlay */
+.efm-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-radius: var(--efm-admin-radius-lg);
+}
+
+/* Success/Error States */
+.efm-success-message {
+    color: var(--efm-admin-success);
+    font-weight: 500;
+}
+
+.efm-error-message {
+    color: var(--efm-admin-error);
+    font-weight: 500;
+}
+
+/* Folder Tree Improvements */
+.efm-folder-tree {
+    position: relative;
+    min-height: 200px;
+}
+
+.efm-folder-tree-item {
+    cursor: move;
+    user-select: none;
+}
+
+.efm-folder-tree-item.drag-over {
+    background: var(--efm-admin-gray-100);
+    border-color: var(--efm-admin-primary);
+}
+
+.efm-folder-tree-item.drag-over .efm-folder-icon {
+    color: var(--efm-admin-primary);
+}
+
+/* Form Improvements */
+.efm-form-input:disabled,
+.efm-form-select:disabled,
+.efm-form-textarea:disabled {
+    background: var(--efm-admin-gray-100);
+    cursor: not-allowed;
+}
+
+/* Responsive Improvements */
+@media (max-width: 782px) {
+    .efm-admin-actions {
+        flex-direction: column;
+    }
+    
+    .efm-form-actions {
+        flex-direction: column;
+    }
+    
+    .efm-admin-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .widefat {
+        font-size: 14px;
+    }
+    
+    .widefat th,
+    .widefat td {
+        padding: 8px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .efm-admin-tabs,
+    .efm-admin-actions,
+    .efm-form-actions,
+    .efm-drag-hint {
+        display: none !important;
+    }
+    
+    .efm-admin-content {
+        display: block !important;
+    }
+}

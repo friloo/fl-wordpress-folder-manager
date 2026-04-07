@@ -1,0 +1,42 @@
+/* Elegant Folder Manager - Frontend Styles */
+
+:root {
+    --efm-primary: #4f46e5;
+    --efm-primary-dark: #4338ca;
+    --efm-secondary: #10b981;
+    --efm-secondary-dark: #059669;
+    --efm-gray-50: #f9fafb;
+    --efm-gray-100: #f3f4f6;
+    --efm-gray-200: #e5e7eb;
+    --efm-gray-300: #d1d5db;
+    --efm-gray-400: #9ca3af;
+    --efm-gray-500: #6b7280;
+    --efm-gray-600: #4b5563;
+    --efm-gray-700: #374151;
+    --efm-gray-800: #1f2937;
+    --efm-gray-900: #111827;
+    --efm-success: #10b981;
+    --efm-warning: #f59e0b;
+    --efm-danger: #ef4444;
+    --efm-info: #3b82f6;
+    --efm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --efm-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --efm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --efm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --efm-radius-sm: 0.375rem;
+    --efm-radius: 0.5rem;
+    --efm-radius-md: 0.75rem;
+    --efm-radius-lg: 1rem;
+    --efm-transition: all 0.2s ease-in-out;
+}
+
+/* Base Container */
+.efm-frontend-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--efm-gray-800);
+    background: var(--efm-gray-50);
+    min-height: 500px;
+    border-radius: var(--efm-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--efm-shadow);
+}
