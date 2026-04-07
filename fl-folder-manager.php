@@ -519,3 +519,8 @@ add_action('plugins_loaded', 'efm_init');
         return $shortcode_handler->render_folder_structure($atts);
     }
 }
+
+// Plugin initialisieren - sicherstellen, dass WordPress geladen ist
+add_action('plugins_loaded', function() {
+    ElegantFolderManager::get_instance();
+});
