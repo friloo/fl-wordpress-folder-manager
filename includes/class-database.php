@@ -46,8 +46,7 @@ class Database {
             KEY folder_id (folder_id),
             KEY uploaded_by (uploaded_by),
             KEY file_type (file_type),
-            KEY is_active (is_active),
-            FOREIGN KEY (folder_id) REFERENCES {$table_prefix}folders(id) ON DELETE CASCADE
+            KEY is_active (is_active)
         ) $charset_collate;";
         
         // Tabelle: Upload-Berechtigungen (nur für Upload!)
@@ -62,8 +61,7 @@ class Database {
             UNIQUE KEY folder_role (folder_id, role),
             KEY folder_id (folder_id),
             KEY role (role),
-            KEY can_upload (can_upload),
-            FOREIGN KEY (folder_id) REFERENCES {$table_prefix}folders(id) ON DELETE CASCADE
+            KEY can_upload (can_upload)
         ) $charset_collate;";
         
         // Tabelle: Benutzerdefinierte Rollen (optional)
