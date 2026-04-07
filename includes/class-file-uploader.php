@@ -362,16 +362,6 @@ class FileUploader {
             'nonce' => wp_create_nonce('efm_download_' . $file_id)
         ), home_url());
     }
-}
-    /**
-     * Get file download URL
-     */
-    public function get_file_download_url($file_id) {
-        return add_query_arg(array(
-            'efm_download' => $file_id,
-            'nonce' => wp_create_nonce('efm_download_' . $file_id)
-        ), home_url('/'));
-    }
     
     /**
      * Get file icon class based on file type
@@ -507,3 +497,4 @@ class FileUploader {
             $file_id
         ), ARRAY_A);
     }
+}

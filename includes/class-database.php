@@ -76,6 +76,19 @@ class Database {
             UNIQUE KEY role_key (role_key),
             KEY is_active (is_active)
         ) $charset_collate;";
+
+        // Tabelle: Benutzer-Rollen-Zuordnung
+        $sql[] = "CREATE TABLE IF NOT EXISTS {$table_prefix}user_roles (
+            id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id BIGINT(20) UNSIGNED NOT NULL,
+            role_key VARCHAR(100) NOT NULL,
+            assigned_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            assigned_by BIGINT(20) UNSIGNED NOT NULL,
+            PRIMARY KEY (id),
+            UNIQUE KEY user_role (user_id, role_key),
+            KEY user_id (user_id),
+            KEY role_key (role_key)
+        ) $charset_collate;";
         
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         
@@ -369,11 +382,9 @@ class Database {
         }
         
         // Benutzerdefinierte Rollen prüfen
-        $custom_roles_table = self::get_table_name('custom_roles');
+        $user_roles_table = self::get_table_name('user_roles');
         $user_custom_roles = $wpdb->get_col($wpdb->prepare(
-            "SELECT role_key FROM $custom_roles_table WHERE id IN (
-                SELECT role_id FROM {$wpdb->prefix}efm_user_roles WHERE user_id = %d
-            )",
+            "SELECT role_key FROM $user_roles_table WHERE user_id = %d",
             $user_id
         ));
         
