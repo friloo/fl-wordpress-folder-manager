@@ -1,0 +1,335 @@
+# Copyright (C) 2024 Elegant Folder Manager
+# This file is distributed under the same license as the Elegant Folder Manager package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Elegant Folder Manager 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-06 18:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: fl-folder-manager.php:4
+msgid "Elegant Folder Manager"
+msgstr ""
+
+#: fl-folder-manager.php:5
+msgid "Ein elegantes Ordner-Management-System mit rollenbasierten Upload-Berechtigungen und schöner Frontend-Darstellung."
+msgstr ""
+
+#: includes/class-shortcode-handler.php:120
+msgid "Login Required"
+msgstr ""
+
+#: includes/class-shortcode-handler.php:121
+msgid "Please log in to view the folder structure."
+msgstr ""
+
+#: includes/class-shortcode-handler.php:124
+msgid "Log In"
+msgstr ""
+
+#: admin/pages/folder-manager.php:20
+msgid "Elegant Folder Manager"
+msgstr ""
+
+#: admin/pages/folder-manager.php:27
+msgid "Folders"
+msgstr ""
+
+#: admin/pages/folder-manager.php:31
+msgid "Permissions"
+msgstr ""
+
+#: admin/pages/folder-manager.php:35
+msgid "Settings"
+msgstr ""
+
+#: admin/pages/folder-manager.php:43
+msgid "Folder Management"
+msgstr ""
+
+#: admin/pages/folder-manager.php:44
+msgid "Create and organize folders in a tree structure. Drag and drop to reorder."
+msgstr ""
+
+#: admin/pages/folder-manager.php:49
+msgid "Create New Folder"
+msgstr ""
+
+#: admin/pages/folder-manager.php:58
+msgid "Folder Structure"
+msgstr ""
+
+#: admin/pages/folder-manager.php:62
+msgid "Loading folders..."
+msgstr ""
+
+#: admin/pages/folder-manager.php:69
+msgid "Drag & Drop Reordering"
+msgstr ""
+
+#: admin/pages/folder-manager.php:70
+msgid "Drag folders to reorder them. Drop a folder onto another folder to make it a subfolder."
+msgstr ""
+
+#: admin/pages/folder-manager.php:77
+msgid "Upload Permissions"
+msgstr ""
+
+#: admin/pages/folder-manager.php:78
+msgid "Configure which user roles can upload files to which folders."
+msgstr ""
+
+#: admin/pages/folder-manager.php:82
+msgid "Loading permissions..."
+msgstr ""
+
+#: admin/pages/folder-manager.php:89
+msgid "Plugin Settings"
+msgstr ""
+
+#: admin/pages/folder-manager.php:90
+msgid "Configure general plugin settings and behavior."
+msgstr ""
+
+#: admin/pages/folder-manager.php:94
+msgid "Upload Settings"
+msgstr ""
+
+#: admin/pages/folder-manager.php:98
+msgid "Maximum File Size"
+msgstr ""
+
+#: admin/pages/folder-manager.php:107
+msgid "Maximum size for uploaded files. Note: This may be limited by your server configuration."
+msgstr ""
+
+#: admin/pages/folder-manager.php:111
+msgid "Allowed File Types"
+msgstr ""
+
+#: admin/pages/folder-manager.php:114
+msgid "Images (JPG, PNG, GIF, SVG, WebP)"
+msgstr ""
+
+#: admin/pages/folder-manager.php:118
+msgid "PDF Documents"
+msgstr ""
+
+#: admin/pages/folder-manager.php:122
+msgid "Office Documents (Word, Excel, PowerPoint)"
+msgstr ""
+
+#: admin/pages/folder-manager.php:126
+msgid "Text Files (TXT, CSV)"
+msgstr ""
+
+#: admin/pages/folder-manager.php:130
+msgid "Archives (ZIP, RAR, 7Z)"
+msgstr ""
+
+#: admin/pages/folder-manager.php:134
+msgid "Media Files (MP3, MP4, MOV, AVI)"
+msgstr ""
+
+#: admin/pages/folder-manager.php:140
+msgid "Save Settings"
+msgstr ""
+
+#: admin/pages/folder-manager.php:146
+msgid "Frontend Settings"
+msgstr ""
+
+#: admin/pages/folder-manager.php:150
+msgid "Default Shortcode Parameters"
+msgstr ""
+
+#: admin/pages/folder-manager.php:154
+msgid "These are the default parameters used when the shortcode is called without attributes."
+msgstr ""
+
+#: admin/pages/folder-manager.php:159
+msgid "Files Per Page"
+msgstr ""
+
+#: admin/pages/folder-manager.php:164
+msgid "Number of files to show per page in the file list."
+msgstr ""
+
+#: admin/pages/folder-manager.php:169
+msgid "System Information"
+msgstr ""
+
+#: admin/pages/folder-manager.php:173
+msgid "Plugin Version"
+msgstr ""
+
+#: admin/pages/folder-manager.php:177
+msgid "WordPress Version"
+msgstr ""
+
+#: admin/pages/folder-manager.php:181
+msgid "PHP Version"
+msgstr ""
+
+#: admin/pages/folder-manager.php:185
+msgid "Upload Directory"
+msgstr ""
+
+#: admin/pages/folder-manager.php:189
+msgid "Database Tables"
+msgstr ""
+
+#: admin/pages/folder-manager.php:218
+msgid "Loading..."
+msgstr ""
+
+#: admin/pages/folder-manager.php:219
+msgid "Saving..."
+msgstr ""
+
+#: admin/pages/folder-manager.php:220
+msgid "Are you sure you want to delete this folder?"
+msgstr ""
+
+#: admin/pages/folder-manager.php:221
+msgid "Success!"
+msgstr ""
+
+#: admin/pages/folder-manager.php:222
+msgid "Error!"
+msgstr ""
+
+#: public/templates/folder-structure.php:30
+msgid "Search folders and files..."
+msgstr ""
+
+#: public/templates/folder-structure.php:31
+msgid "Search"
+msgstr ""
+
+#: public/templates/folder-structure.php:33
+msgid "Clear search"
+msgstr ""
+
+#: public/templates/folder-structure.php:51
+msgid "Folders"
+msgstr ""
+
+#: public/templates/folder-structure.php:57
+msgid "Files"
+msgstr ""
+
+#: public/templates/folder-structure.php:63
+msgid "Total Size"
+msgstr ""
+
+#: public/templates/folder-structure.php:78
+msgid "No folders found."
+msgstr ""
+
+#: public/templates/folder-structure.php:99
+msgid "files"
+msgstr ""
+
+#: public/templates/folder-structure.php:107
+msgid "View folder"
+msgstr ""
+
+#: public/templates/folder-structure.php:112
+msgid "Upload files"
+msgstr ""
+
+#: public/templates/folder-structure.php:118
+msgid "Expand folder"
+msgstr ""
+
+#: public/templates/folder-structure.php:133
+msgid "No files in this folder."
+msgstr ""
+
+#: public/templates/folder-structure.php:139
+msgid "Name"
+msgstr ""
+
+#: public/templates/folder-structure.php:140
+msgid "Size"
+msgstr ""
+
+#: public/templates/folder-structure.php:141
+msgid "Date"
+msgstr ""
+
+#: public/templates/folder-structure.php:142
+msgid "Actions"
+msgstr ""
+
+#: public/templates/folder-structure.php:169
+msgid "Preview file"
+msgstr ""
+
+#: public/templates/folder-structure.php:175
+msgid "Download file"
+msgstr ""
+
+#: public/templates/folder-structure.php:186
+msgid "Load More Files"
+msgstr ""
+
+#: public/templates/folder-structure.php:195
+msgid "Upload Files"
+msgstr ""
+
+#: public/templates/folder-structure.php:196
+msgid "Close"
+msgstr ""
+
+#: public/templates/folder-structure.php:203
+msgid "Drag & drop files here or click to browse"
+msgstr ""
+
+#: public/templates/folder-structure.php:206
+msgid "Browse Files"
+msgstr ""
+
+#: public/templates/folder-structure.php:218
+msgid "Maximum file size: 10MB. Allowed file types: Images, PDF, Documents."
+msgstr ""
+
+#: public/templates/folder-structure.php:224
+msgid "Cancel"
+msgstr ""
+
+#: public/templates/folder-structure.php:227
+msgid "Start Upload"
+msgstr ""
+
+#: public/templates/folder-structure.php:235
+msgid "File Preview"
+msgstr ""
+
+#: public/templates/folder-structure.php:253
+msgid "File Size:"
+msgstr ""
+
+#: public/templates/folder-structure.php:257
+msgid "File Type:"
+msgstr ""
+
+#: public/templates/folder-structure.php:261
+msgid "Upload Date:"
+msgstr ""
+
+#: public/templates/folder-structure.php:265
+msgid "Downloads:"
+msgstr ""
+
+#: public/templates/folder-structure.php:273
+msgid "Download"
+msgstr ""
